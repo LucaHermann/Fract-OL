@@ -18,7 +18,10 @@ CFLAGS		=
 
 LIBFT_DIR	=	libft/
 SRCS_DIR	=	srcs/
-SRCS_LIST	=	fractol.c
+SRCS_LIST	=	draw_mandel.c\
+				draw_julia.c\
+				init.c\
+				event.c
 SRCS		=	$(addprefix $(SRCS_DIR), $(SRCS_LIST))
 OBJS_DIR	=	objs/
 OBJS_LIST	=	$(patsubst %.c, %.o, $(SRCS_LIST))
@@ -32,7 +35,7 @@ all : $(NAME)
 
 $(NAME) : $(OBJS)
 	@make --no-print-directory -C $(LIBFT_DIR)
-	@echo "\033[37mLinking...\033[0m"
+	@echo "\033[32mLinking...\033[0m"
 	@$(CC) $(CFLAGS) $^ $(LIBS) -o $@
 	@echo "\033[32mBinary \033[1;32m$(NAME)\033[1;0m\033[32m created.\033[0m"
 
