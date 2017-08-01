@@ -90,10 +90,10 @@ void	clean_event(int keyboard, t_env *e)
 	else if (keyboard == 126)
 		e->imy += 20;
 	mlx_clear_window(e->mlx, e->win);
-	clen_next(keyboard, e);
+	clean_next(keyboard, e);
 }
 
-void	clen_next(int keyboard, t_env *e)
+void	clean_next(int keyboard, t_env *e)
 {
 	if (keyboard == 15)
 	{

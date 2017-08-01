@@ -20,6 +20,7 @@ LIBFT_DIR	=	libft/
 SRCS_DIR	=	srcs/
 SRCS_LIST	=	draw_mandel.c\
 				draw_julia.c\
+				draw_buddhabrot.c\
 				init.c\
 				event.c
 SRCS		=	$(addprefix $(SRCS_DIR), $(SRCS_LIST))

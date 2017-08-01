@@ -12,7 +12,7 @@
 
 #include "fractol.h"
 
-void	mandelbrot_init(t_env *e)
+void	mandelbrot_init(t_env *e) // on définit la zone que l'on dessine.
 {
 	e->x1 = -2.1;
 	e->y1 = -1.2;
@@ -23,7 +23,7 @@ void	mandelbrot_init(t_env *e)
 	mandelbrot_basic(e);
 }
 
-void	mandelbrot_basic(t_env *e)
+void	mandelbrot_basic(t_env *e) // calcul de la taille de l'image.
 {
 	int x;
 	int y;
@@ -47,7 +47,7 @@ void	mandelbrot_basic(t_env *e)
 	mlx_put_image_to_window(e->mlx, e->win, e->img, 0, 0);
 }
 
-void	mandelbrot(t_env *e, int x, int y)
+void	mandelbrot(t_env *e, int x, int y) // magie noir de l'algo de mandelbrot
 {
 	int i;
 
@@ -64,7 +64,7 @@ void	mandelbrot(t_env *e, int x, int y)
 	e->str[((x - e->imx) + ((y - e->imy) * WIDTH)) * 4] = e->c >> 16;
 }
 
-void	burn_run(t_env *e, int x, int y)
+void	burn_run(t_env *e, int x, int y) // magie noir de l'algo de burningship.
 {
 	int			i;
 

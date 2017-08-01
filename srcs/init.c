@@ -18,7 +18,8 @@ int		main(int ac, char **av)
 
 	if (ac == 2 && (ft_strcmp("julia", av[1]) == 0 ||
 	ft_strcmp("mandelbrot", av[1]) == 0 ||
-	ft_strcmp("burningship", av[1]) == 0))
+	ft_strcmp("burningship", av[1]) == 0 ||
+	ft_strcmp("buddhabrot", av[1]) == 0))
 	{
 		if (!(e = (t_env *)malloc(sizeof(t_env))))
 			return (-1);
@@ -33,7 +34,7 @@ int		main(int ac, char **av)
 		main_if(e);
 	}
 	else
-		ft_putendl_fd("Usage <filename> [mandelbrot/julia/burningship]", 2);
+		ft_putendl_fd("Usage <filename> [mandelbrot/julia/burningship/buddhabrot]", 2);
 	return (0);
 }
 
@@ -44,6 +45,8 @@ void	main_if(t_env *e)
 		mandelbrot_init(e);
 	else if (ft_strcmp("julia", e->av) == 0)
 		julia_init(e);
+	else if (ft_strcmp("buddhabrot", e->av) == 0)
+		buddhabrot_init(e);
 	mlx_hook(e->win, MOTION_NOTIFY, PTR_MOTION_MASK, mouse_move, e);
 	mlx_mouse_hook(e->win, my_mouse, e);
 	mlx_hook(e->win, 2, 3, my_key, e);
